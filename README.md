@@ -1,44 +1,19 @@
-# --- Import Libraries ---
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# 📊 Data Visualization Project (Matplotlib & Seaborn)
 
-# --- Load Dataset ---
-file_path = "bf9a3a15-efd5-4d74-8a5a-6eadb8a14362.csv"   # replace with your file path if needed
-df = pd.read_csv(file_path)
+This project demonstrates how to **analyze and visualize datasets** using **Python, Matplotlib, and Seaborn**.  
+The uploaded dataset (CSV file) is visualized through various charts and graphs to understand its patterns, correlations, and distributions.  
 
-# --- Quick Look at Data ---
-print("Shape of data:", df.shape)
-print("Columns:", df.columns.tolist())
-print(df.head())
+---
 
-# --- 1. Histogram of all numeric columns ---
-df.hist(figsize=(12, 8), bins=20, edgecolor="black")
-plt.suptitle("Histograms of Numeric Columns")
-plt.show()
+## 🚀 Features
+- Load CSV data into a Pandas DataFrame
+- Generate **Histograms** for numeric columns
+- Create a **Correlation Heatmap** for feature relationships
+- Explore data with **Pairplots**
+- Detect outliers using **Boxplots**
+- Build **Bar Charts** for categorical vs. numeric relationships
 
-# --- 2. Correlation Heatmap ---
-plt.figure(figsize=(10, 6))
-sns.heatmap(df.corr(), annot=True, cmap="coolwarm", linewidths=0.5)
-plt.title("Correlation Heatmap")
-plt.show()
+---
 
-# --- 3. Pairplot (relationships between features) ---
-sns.pairplot(df)
-plt.suptitle("Pairwise Relationships", y=1.02)
-plt.show()
-
-# --- 4. Boxplot for all numeric features ---
-plt.figure(figsize=(12, 6))
-sns.boxplot(data=df)
-plt.title("Boxplots of Numeric Columns")
-plt.show()
-
-# --- 5. Example Bar Chart (first 2 columns, change as needed) ---
-if len(df.columns) >= 2:
-    col1, col2 = df.columns[:2]
-    plt.figure(figsize=(10, 6))
-    sns.barplot(x=col1, y=col2, data=df)
-    plt.title(f"Bar Plot of {col1} vs {col2}")
-    plt.xticks(rotation=45)
-    plt.show()
+## 🛠️ Requirements
+Make sure you have the following Python libraries installed:
